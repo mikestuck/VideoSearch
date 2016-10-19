@@ -20,7 +20,6 @@
     [Fabric with:@[[Crashlytics class]]];
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
     [mixpanel track:@"APP OPENED"];
-    
     return YES;
 }
 

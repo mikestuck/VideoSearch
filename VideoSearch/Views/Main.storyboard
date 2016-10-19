@@ -18,7 +18,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NSg-9c-obA">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No videos available..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pn4-do-GfJ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="NSg-9c-obA">
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="videodetailcell" id="xeG-mq-jyV" customClass="VideoTableViewCell">
@@ -51,12 +56,12 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="Y13-Tr-A9v" firstAttribute="leading" secondItem="m2v-vh-4UG" secondAttribute="trailing" constant="10" id="GQa-pI-Bjc"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="OgW-yW-iw6" secondAttribute="trailing" constant="70" id="QJH-NQ-AE5"/>
-                                                <constraint firstAttribute="trailingMargin" secondItem="JYb-Rn-isR" secondAttribute="trailing" constant="25" id="UEB-Id-J91"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="OgW-yW-iw6" secondAttribute="trailing" constant="65" id="QJH-NQ-AE5"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="JYb-Rn-isR" secondAttribute="trailing" constant="20" id="UEB-Id-J91"/>
                                                 <constraint firstItem="Y13-Tr-A9v" firstAttribute="centerY" secondItem="m2v-vh-4UG" secondAttribute="centerY" id="Vb0-OY-ram"/>
                                                 <constraint firstItem="JYb-Rn-isR" firstAttribute="centerY" secondItem="OgW-yW-iw6" secondAttribute="centerY" id="XKT-yh-jcB"/>
                                                 <constraint firstItem="m2v-vh-4UG" firstAttribute="centerY" secondItem="kha-YR-73R" secondAttribute="centerY" id="frK-hW-pZj"/>
-                                                <constraint firstItem="m2v-vh-4UG" firstAttribute="leading" secondItem="kha-YR-73R" secondAttribute="leadingMargin" constant="25" id="jJX-xl-J9s"/>
+                                                <constraint firstItem="m2v-vh-4UG" firstAttribute="leading" secondItem="kha-YR-73R" secondAttribute="leadingMargin" constant="20" id="jJX-xl-J9s"/>
                                                 <constraint firstItem="OgW-yW-iw6" firstAttribute="centerY" secondItem="Y13-Tr-A9v" secondAttribute="centerY" id="uYT-ve-dZ7"/>
                                             </constraints>
                                         </tableViewCellContentView>
@@ -110,17 +115,19 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="NSg-9c-obA" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-16" id="0dy-fp-M1o"/>
-                            <constraint firstItem="lbX-e1-Uqm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="50" id="15F-SX-NSG"/>
+                            <constraint firstItem="lbX-e1-Uqm" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="45" id="15F-SX-NSG"/>
                             <constraint firstItem="lbX-e1-Uqm" firstAttribute="top" secondItem="NnT-6v-wCp" secondAttribute="bottom" constant="40" id="3b1-Pu-iUT"/>
                             <constraint firstItem="DHU-Eh-djL" firstAttribute="centerX" secondItem="3dG-NV-dxD" secondAttribute="centerX" id="6ev-mz-MBs"/>
                             <constraint firstItem="3dG-NV-dxD" firstAttribute="top" secondItem="NnT-6v-wCp" secondAttribute="bottom" constant="40" id="7Kh-IH-NkK"/>
                             <constraint firstItem="lbX-e1-Uqm" firstAttribute="top" secondItem="TD0-G8-GqP" secondAttribute="bottom" constant="10" id="9CM-S2-Om1"/>
                             <constraint firstItem="NnT-6v-wCp" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="15" id="Dhd-gH-vtC"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NSg-9c-obA" secondAttribute="bottom" id="Lnw-f3-tCJ"/>
+                            <constraint firstItem="Pn4-do-GfJ" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="PHe-Vj-5qL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="NSg-9c-obA" secondAttribute="trailing" constant="-16" id="PLs-5i-hGo"/>
                             <constraint firstItem="NnT-6v-wCp" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Zym-5L-sCg"/>
+                            <constraint firstItem="Pn4-do-GfJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aaj-4I-tLN"/>
                             <constraint firstItem="3dG-NV-dxD" firstAttribute="top" secondItem="DHU-Eh-djL" secondAttribute="bottom" constant="10" id="bRC-0i-7Tr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="3dG-NV-dxD" secondAttribute="trailing" constant="50" id="bWP-Bs-uIo"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3dG-NV-dxD" secondAttribute="trailing" constant="45" id="bWP-Bs-uIo"/>
                             <constraint firstItem="TD0-G8-GqP" firstAttribute="centerX" secondItem="lbX-e1-Uqm" secondAttribute="centerX" id="cW8-5j-FFV"/>
                             <constraint firstItem="U2h-Lg-qWM" firstAttribute="top" secondItem="3dG-NV-dxD" secondAttribute="bottom" constant="10" id="h0y-hO-Fu1"/>
                             <constraint firstItem="ue4-Cg-Ufn" firstAttribute="top" secondItem="lbX-e1-Uqm" secondAttribute="bottom" constant="10" id="lOD-YR-aWh"/>

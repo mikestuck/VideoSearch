@@ -101,7 +101,10 @@
 - (void)searchForVideos: (Swing *)swing{
     searchResultVideos = [SearchUtils searchVideosWithStartAndEnd:[NSNumber numberWithDouble:swing.startTime.doubleValue] endTime:[NSNumber numberWithDouble:swing.endTime.doubleValue] withObjects:allVideos];
     if(searchResultVideos.count == 0){
-        [ErrorUtils showAlert:@"Oh no!" subTitle:@"looks like there are no videos that match your search..." inView:self];
+        _videoTableView.hidden = true;
+    }
+    else{
+        _videoTableView.hidden = false;
     }
     [_videoTableView reloadData];
 }
