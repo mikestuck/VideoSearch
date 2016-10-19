@@ -1,6 +1,6 @@
 # Diamond Kinetics Coding Challenge
 
-A simple video search based on starting and endtime parameters
+A simple video search based on starting and endtime parameters.
 
 ## Getting Started
 
@@ -14,7 +14,7 @@ Mixpanel
 Fabric
 Crashlytics
 
-Due to including these analytic based pods you must first install them and create the xcode workspace. In order to install cocoapods enter the following line in the command line.
+Due to including these analytic based pods you must first install them and create the xcode workspace. In order to install cocoapods enter the following line into the command line.
 
 ```
 $ sudo gem install cocoapods --pre
@@ -30,56 +30,21 @@ pod install
 open VideoSearch.xcworkspace
 ```
 
-## Running the tests
+## Running the application
 
-Explain how to run the automated tests for this system
-
-### Break down into end to end tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-### And coding style tests
-
-Explain what these tests test and why
-
-```
-Give an example
-```
-
-## Deployment
-
-Add additional notes about how to deploy this on a live system
+Once all pods are installed and the workspace is open you are able to run the project.
 
 ## Built With
 
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - The web framework used
-* [Maven](https://maven.apache.org/) - Dependency Management
-* [ROME](https://rometools.github.io/rome/) - Used to generate RSS Feeds
-
-## Contributing
-
-Please read [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) for details on our code of conduct, and the process for submitting pull requests to us.
+* [Crashlytics](https://try.crashlytics.com/) - Crash analytics
+* [Fabric](https://get.fabric.io/ios) - Install and crash analytics
+* [Mixpanel](https://mixpanel.com/help/) - Action analytics
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/your/project/tags). 
+I am using [SemVer](http://semver.org/) for versioning.
 
 ## Authors
 
-* **Billie Thompson** - *Initial work* - [PurpleBooth](https://github.com/PurpleBooth)
+* **Mike Stuck** - [www.mikestuck.com](http://www.mikestuck.com)
 
-See also the list of [contributors](https://github.com/your/project/contributors) who participated in this project.
-
-## License
-
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
-
-## Acknowledgments
-
-* Hat tip to anyone who's code was used
-* Inspiration
-* etc
