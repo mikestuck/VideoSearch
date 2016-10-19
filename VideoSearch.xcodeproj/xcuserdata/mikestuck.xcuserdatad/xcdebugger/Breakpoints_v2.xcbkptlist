@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VideoSearch/Controllers/VideoSearchViewController.m"
-            timestampString = "498535407.886491"
+            timestampString = "498537093.703337"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "28"
-            endingLineNumber = "28"
+            startingLineNumber = "27"
+            endingLineNumber = "27"
             landmarkName = "-loadAllVideos"
             landmarkType = "7">
          </BreakpointContent>
@@ -54,16 +54,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "VideoSearch/Controllers/VideoSearchViewController.m"
-            timestampString = "498535392.621485"
+            timestampString = "498538991.624428"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "44"
-            endingLineNumber = "44"
-            landmarkName = "-searchForVideos:endtime:"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "-searchForVideos:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

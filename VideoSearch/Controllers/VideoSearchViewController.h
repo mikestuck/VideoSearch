@@ -11,8 +11,10 @@
 #import "SearchUtils.h"
 #import "Video.h"
 #import "ErrorUtils.h"
+#import "Swing.h"
+#import "VideoTableViewCell.h"
 
-@interface VideoSearchViewController : UIViewController{
+@interface VideoSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
     NSArray *allVideos;
     NSArray *searchResultVideos;
 }

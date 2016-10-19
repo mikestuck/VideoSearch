@@ -10,4 +10,7 @@
 
 @interface VideoTableViewCell : UITableViewCell
 
+@property (weak, nonatomic) IBOutlet UILabel *startTimeLabel;
+@property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
+
 @end

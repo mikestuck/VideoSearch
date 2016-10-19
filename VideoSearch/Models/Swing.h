@@ -10,8 +10,6 @@
 
 @interface Swing : NSObject
 
-- (id)initWithDictionary:(NSDictionary *)dict;
-
 @property (strong, nonatomic) NSNumber *startTime;
 @property (strong, nonatomic) NSNumber *endTime;
 

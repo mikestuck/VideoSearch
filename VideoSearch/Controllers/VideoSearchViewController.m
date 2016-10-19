@@ -20,7 +20,6 @@
     [super viewDidLoad];
     [self loadAllVideos];
     [self setupSteppers];
-    [self searchForVideos:[NSNumber numberWithDouble:0.2] endtime:[NSNumber numberWithDouble:0.9]];
 }
 
 - (void)loadAllVideos{
@@ -33,15 +32,73 @@
     _endTimeLabel.text = [NSString stringWithFormat:@"%.02f",_endTimeStepper.value];
 }
 
-#pragma mark - Table View
+#pragma mark - TableView dataSource
 
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return 2;
+}
 
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    static NSString *cellIdentifier = @"videodetailcell";
+    VideoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (cell == nil) {
+        cell = [[VideoTableViewCell alloc]initWithStyle:
+                UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    return cell;
+}
+
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView{
+    return 1;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    NSString *headerTitle;
+    headerTitle = @"Videos";
+    return headerTitle;
+}
+
+#pragma mark - TableView delegate
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:
+(NSIndexPath *)indexPath{
+    // Do nothing
+}
+
+#pragma mark - Steppers
+
+- (IBAction)startTimeChanged:(id)sender {
+    _startTimeLabel.text = [NSString stringWithFormat:@"%.02f",_startTimeStepper.value];
+    _endTimeStepper.minimumValue = _startTimeStepper.value + 0.05;
+    Swing *swing = [self createSwing];
+    [self searchForVideos:swing];
+}
+
+- (IBAction)endTimeChanged:(id)sender {
+    _endTimeLabel.text = [NSString stringWithFormat:@"%.02f",_endTimeStepper.value];
+    _startTimeStepper.maximumValue = _endTimeStepper.value - 0.05;
+    Swing *swing = [self createSwing];
+    [self searchForVideos:swing];
+}
 
 #pragma mark - Search
 
-- (void)searchForVideos: (NSNumber *)startTime endtime:(NSNumber *)endTime{
-    searchResultVideos = [SearchUtils searchVideosWithStartAndEnd:[NSNumber numberWithDouble:0.40] endTime:[NSNumber numberWithDouble:0.95] withObjects:allVideos];
+- (void)searchForVideos: (Swing *)swing{
+    searchResultVideos = [SearchUtils searchVideosWithStartAndEnd:[NSNumber numberWithDouble:swing.startTime.doubleValue] endTime:[NSNumber numberWithDouble:swing.endTime.doubleValue] withObjects:allVideos];
     NSLog(@"%@",searchResultVideos);
+    if(searchResultVideos.count == 0){
+        [ErrorUtils showAlert:@"Oh no!" subTitle:@"looks like there are no videos that match your search..." inView:self];
+    }
+    [_videoTableView reloadData];
+}
+
+#pragma mark - Helpers
+
+- (Swing *)createSwing{
+    Swing *swing = [[Swing alloc] init];
+    swing.startTime = [NSNumber numberWithDouble:_startTimeStepper.value];
+    swing.endTime = [NSNumber numberWithDouble:_endTimeStepper.value];
+    return swing;
 }
 
 

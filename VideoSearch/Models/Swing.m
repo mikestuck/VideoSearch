@@ -10,16 +10,5 @@
 
 @implementation Swing
 
-- (id)initWithDictionary:(NSDictionary *)dict {
-    
-    self = [super init];
-    if (self) {
-        _startTime = ((NSNumber *)dict[@"startTime"]);
-        _endTime = ((NSNumber *)dict[@"endTime"]);
-    }
-    return self;
-}
-
-
 
 @end

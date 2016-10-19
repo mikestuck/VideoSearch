@@ -11,6 +11,6 @@
 
 @interface ErrorUtils : NSObject
 
-+ (void)showAlert:(NSString *)title subTitle:(NSString *)subTitle inView:(UIView *)view;
++ (void)showAlert:(NSString *)title subTitle:(NSString *)subTitle inView:(UIViewController *)view;
 
 @end
