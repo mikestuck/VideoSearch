@@ -14,10 +14,11 @@ Mixpanel
 Fabric
 Crashlytics
 
-Due to including these analytic based pods you must first install them and create the xcode workspace. In order to install cocoapods enter the following line into the command line.
+Due to including these analytic based pods you must first install them and create the xcode workspace. In order to install cocoapods enter the following line into Terminal.
 
 ```
-$ sudo gem install cocoapods --pre
+Open Terminal
+$ sudo gem install cocoapods 
 ```
 
 ### Installing
