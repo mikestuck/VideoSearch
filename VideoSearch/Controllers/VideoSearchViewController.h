@@ -13,6 +13,7 @@
 #import "ErrorUtils.h"
 #import "Swing.h"
 #import "VideoTableViewCell.h"
+#import "ColorUtils.h"
 
 @interface VideoSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
     NSArray *allVideos;
@@ -24,7 +25,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
 @property (weak, nonatomic) IBOutlet UIStepper *endTimeStepper;
 @property (weak, nonatomic) IBOutlet UITableView *videoTableView;
-
-
 
 @end

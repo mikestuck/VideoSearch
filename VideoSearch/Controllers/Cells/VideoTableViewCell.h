@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Video.h"
 
 @interface VideoTableViewCell : UITableViewCell
 
 @property (weak, nonatomic) IBOutlet UILabel *startTimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *endTimeLabel;
+
+- (void)createCellWithVideo:(Video *)video;
 
 @end

@@ -7,6 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Mixpanel/Mixpanel.h"
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 

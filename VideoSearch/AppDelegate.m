@@ -16,7 +16,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [Mixpanel sharedInstanceWithToken:@"8ea1269ce03beba7fcb67683eb786375"];
+    [Fabric with:@[[Crashlytics class]]];
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"APP OPENED"];
+    
     return YES;
 }
 
@@ -28,13 +32,14 @@
 
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
-    // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-    // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"APP IN BACKGROUND"];
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"APP IN FOREGROUND"];
 }
 
 
@@ -44,7 +49,8 @@
 
 
 - (void)applicationWillTerminate:(UIApplication *)application {
-    // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+    Mixpanel *mixpanel = [Mixpanel sharedInstance];
+    [mixpanel track:@"APP TERMINATED"];
 }
 
 

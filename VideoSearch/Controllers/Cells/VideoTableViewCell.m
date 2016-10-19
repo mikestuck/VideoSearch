@@ -10,10 +10,9 @@
 
 @implementation VideoTableViewCell
 
-- (void)awakeFromNib {
-    [super awakeFromNib];
-    // Initialization code
+- (void)createCellWithVideo:(Video *)video{
+    _startTimeLabel.text = [NSString stringWithFormat:@"%.02f",video.startTime.doubleValue];
+    _endTimeLabel.text = [NSString stringWithFormat:@"%.02f",video.endTime.doubleValue];
 }
-
 
 @end

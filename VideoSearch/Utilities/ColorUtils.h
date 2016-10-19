@@ -11,8 +11,7 @@
 
 @interface ColorUtils : NSObject
 
-+ (UIColor *)mainColor;
-
-+ (UIColor *)accentColor;
++ (UIColor *)startColor;
++ (UIColor *)endColor;
 
 @end

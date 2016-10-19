@@ -10,13 +10,11 @@
 
 @implementation ColorUtils
 
-+ (UIColor *)mainColor {
-    return [UIColor colorWithRed:244.0/255.0 green:244.0/255.0 blue:244.0/255.0 alpha:1];
++ (UIColor *)startColor {
+    return [UIColor colorWithRed:39.0/255.0 green:174.0/255.0 blue:96.0/255.0 alpha:1];
 }
-
-+ (UIColor *)accentColor {
-    return [UIColor colorWithRed:196.0/255.0 green:195.0/255.0 blue:188.0/255.0 alpha:1];
++ (UIColor *)endColor {
+    return [UIColor colorWithRed:192.0/255.0 green:57.0/255.0 blue:43.0/255.0 alpha:1];
 }
-
 
 @end

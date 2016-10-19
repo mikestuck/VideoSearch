@@ -24,18 +24,25 @@
 
 - (void)loadAllVideos{
     allVideos = [FakeGenUtils generateFakeVideoData];
-    NSLog(@"%@",allVideos);
+    [_videoTableView reloadData];
 }
 
 - (void)setupSteppers{
+    _startTimeStepper.tintColor = [ColorUtils startColor];
+    _startTimeLabel.textColor = [ColorUtils startColor];
     _startTimeLabel.text = [NSString stringWithFormat:@"%.02f",_startTimeStepper.value];
+    _endTimeStepper.tintColor = [ColorUtils endColor];
+    _endTimeLabel.textColor = [ColorUtils endColor];
     _endTimeLabel.text = [NSString stringWithFormat:@"%.02f",_endTimeStepper.value];
 }
 
 #pragma mark - TableView dataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 2;
+    if(searchResultVideos.count == 0){
+        return allVideos.count;
+    }
+    return searchResultVideos.count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -44,6 +51,14 @@
     if (cell == nil) {
         cell = [[VideoTableViewCell alloc]initWithStyle:
                 UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
+    }
+    if(searchResultVideos.count == 0){
+       Video *cellVideo = [allVideos objectAtIndex:indexPath.row];
+        [cell createCellWithVideo:cellVideo];
+    }
+    else{
+        Video *cellVideo = [searchResultVideos objectAtIndex:indexPath.row];
+        [cell createCellWithVideo:cellVideo];
     }
     return cell;
 }
@@ -85,7 +100,6 @@
 
 - (void)searchForVideos: (Swing *)swing{
     searchResultVideos = [SearchUtils searchVideosWithStartAndEnd:[NSNumber numberWithDouble:swing.startTime.doubleValue] endTime:[NSNumber numberWithDouble:swing.endTime.doubleValue] withObjects:allVideos];
-    NSLog(@"%@",searchResultVideos);
     if(searchResultVideos.count == 0){
         [ErrorUtils showAlert:@"Oh no!" subTitle:@"looks like there are no videos that match your search..." inView:self];
     }
@@ -100,6 +114,5 @@
     swing.endTime = [NSNumber numberWithDouble:_endTimeStepper.value];
     return swing;
 }
-
 
 @end
