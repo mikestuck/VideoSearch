@@ -18,12 +18,14 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self loadAllVideos];
+    [self loadAllVideosAndSort];
     [self setupSteppers];
 }
 
-- (void)loadAllVideos{
+- (void)loadAllVideosAndSort{
     allVideos = [FakeGenUtils generateFakeVideoData];
+    NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startTime" ascending:YES];
+    sortedVideos = [allVideos sortedArrayUsingDescriptors:@[sortDescriptor]];
     [_videoTableView reloadData];
 }
 
@@ -40,7 +42,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     if(searchResultVideos.count == 0){
-        return allVideos.count;
+        return sortedVideos.count;
     }
     return searchResultVideos.count;
 }
@@ -53,7 +55,7 @@
                 UITableViewCellStyleDefault reuseIdentifier:cellIdentifier];
     }
     if(searchResultVideos.count == 0){
-       Video *cellVideo = [allVideos objectAtIndex:indexPath.row];
+       Video *cellVideo = [sortedVideos objectAtIndex:indexPath.row];
         [cell createCellWithVideo:cellVideo];
     }
     else{
@@ -99,7 +101,7 @@
 #pragma mark - Search
 
 - (void)searchForVideos: (Swing *)swing{
-    searchResultVideos = [SearchUtils searchVideosWithStartAndEnd:[NSNumber numberWithDouble:swing.startTime.doubleValue] endTime:[NSNumber numberWithDouble:swing.endTime.doubleValue] withObjects:allVideos];
+    searchResultVideos = [SearchUtils searchVideosWithStartAndEnd:[NSNumber numberWithDouble:swing.startTime.doubleValue] endTime:[NSNumber numberWithDouble:swing.endTime.doubleValue] withObjects:sortedVideos];
     if(searchResultVideos.count == 0){
         _videoTableView.hidden = true;
     }

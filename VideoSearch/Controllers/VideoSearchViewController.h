@@ -17,6 +17,7 @@
 
 @interface VideoSearchViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>{
     NSArray *allVideos;
+    NSArray *sortedVideos;
     NSArray *searchResultVideos;
 }
 
