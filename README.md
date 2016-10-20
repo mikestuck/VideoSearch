@@ -2,6 +2,14 @@
 
 A simple video search based on starting and endtime parameters.
 
+## Key project details
+
+- 30 mock video objects are created with a start time between 0 and 0.5 seconds and end time between 0.5 seconds and 1 second.
+
+- Videos are sorted by start time in ascending order. 
+
+- Video data is sorted in a "Live" format, on each action of segment controllers.
+
 ## Getting Started
 
 Clone or download the VideoSearch repo.
@@ -10,8 +18,8 @@ Clone or download the VideoSearch repo.
 
 This project does include the following pods:
 
-Mixpanel
-Fabric
+Mixpanel,
+Fabric,
 Crashlytics
 
 Due to including these analytic based pods you must first install them and create the xcode workspace. In order to install cocoapods enter the following line into Terminal.

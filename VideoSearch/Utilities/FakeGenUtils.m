@@ -7,7 +7,8 @@
 //
 
 #import "FakeGenUtils.h"
-#import "Constants.h"
+
+#define ARC4RANDOM_MAX      0x100000000
 
 @implementation FakeGenUtils
 

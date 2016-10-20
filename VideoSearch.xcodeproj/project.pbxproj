@@ -22,6 +22,7 @@
 		3FD59B841DB6D75A00CDF2B3 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3FD59B831DB6D75A00CDF2B3 /* QuartzCore.framework */; };
 		3FD59B871DB6DBA400CDF2B3 /* FakeGenUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD59B861DB6DBA400CDF2B3 /* FakeGenUtils.m */; };
 		3FD59B8D1DB6F53200CDF2B3 /* ErrorUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD59B8C1DB6F53200CDF2B3 /* ErrorUtils.m */; };
+		3FD59B911DB947FE00CDF2B3 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FD59B901DB947FE00CDF2B3 /* Constants.m */; };
 		EAB765F8DF53BDD0D627F7AF /* libPods-VideoSearch.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 06C75F39596E87922EA1DD9D /* libPods-VideoSearch.a */; };
 /* End PBXBuildFile section */
 
@@ -51,9 +52,10 @@
 		3FD59B831DB6D75A00CDF2B3 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		3FD59B851DB6DBA400CDF2B3 /* FakeGenUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FakeGenUtils.h; path = Utilities/FakeGenUtils.h; sourceTree = "<group>"; };
 		3FD59B861DB6DBA400CDF2B3 /* FakeGenUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FakeGenUtils.m; path = Utilities/FakeGenUtils.m; sourceTree = "<group>"; };
-		3FD59B8A1DB6DE0700CDF2B3 /* Constants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
 		3FD59B8B1DB6F53200CDF2B3 /* ErrorUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ErrorUtils.h; path = Utilities/ErrorUtils.h; sourceTree = "<group>"; };
 		3FD59B8C1DB6F53200CDF2B3 /* ErrorUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ErrorUtils.m; path = Utilities/ErrorUtils.m; sourceTree = "<group>"; };
+		3FD59B8F1DB947FE00CDF2B3 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		3FD59B901DB947FE00CDF2B3 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		C8011115D1F2FC8CB6E34846 /* Pods-VideoSearch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoSearch.release.xcconfig"; path = "Pods/Target Support Files/Pods-VideoSearch/Pods-VideoSearch.release.xcconfig"; sourceTree = "<group>"; };
 		EFE6E0ED57466049753B3983 /* Pods-VideoSearch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-VideoSearch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-VideoSearch/Pods-VideoSearch.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -103,7 +105,6 @@
 				3FD59B4C1DB6C2C600CDF2B3 /* Supporting Files */,
 				3FD59B581DB6C2C600CDF2B3 /* Assets.xcassets */,
 				3FD59B5D1DB6C2C600CDF2B3 /* Info.plist */,
-				3FD59B8A1DB6DE0700CDF2B3 /* Constants.h */,
 			);
 			path = VideoSearch;
 			sourceTree = "<group>";
@@ -112,6 +113,8 @@
 			isa = PBXGroup;
 			children = (
 				3FD59B4D1DB6C2C600CDF2B3 /* main.m */,
+				3FD59B8F1DB947FE00CDF2B3 /* Constants.h */,
+				3FD59B901DB947FE00CDF2B3 /* Constants.m */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -326,6 +329,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3FD59B911DB947FE00CDF2B3 /* Constants.m in Sources */,
 				3FD59B511DB6C2C600CDF2B3 /* AppDelegate.m in Sources */,
 				3FD59B7D1DB6D70200CDF2B3 /* VideoTableViewCell.m in Sources */,
 				3FD59B8D1DB6F53200CDF2B3 /* ErrorUtils.m in Sources */,

@@ -21,10 +21,10 @@
      Setup analytic tracking
      */
     
-    [Mixpanel sharedInstanceWithToken:@"8ea1269ce03beba7fcb67683eb786375"];
+    [Mixpanel sharedInstanceWithToken:MIXPANEL_API_KEY];
     [Fabric with:@[[Crashlytics class]]];
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    [mixpanel track:@"APP OPENED"];
+    [mixpanel track:MIXPANEL_APP_OPEN];
     return YES;
 }
 
@@ -37,13 +37,13 @@
 
 - (void)applicationDidEnterBackground:(UIApplication *)application {
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    [mixpanel track:@"APP IN BACKGROUND"];
+    [mixpanel track:MIXPANEL_APP_BACKGROUND];
 }
 
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    [mixpanel track:@"APP IN FOREGROUND"];
+    [mixpanel track:MIXPANEL_APP_FOREGROUND];
 }
 
 
@@ -54,7 +54,7 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     Mixpanel *mixpanel = [Mixpanel sharedInstance];
-    [mixpanel track:@"APP TERMINATED"];
+    [mixpanel track:MIXPANEL_APP_TERMINATED];
 }
 
 

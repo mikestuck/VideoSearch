@@ -2,15 +2,20 @@
 //  Constants.h
 //  VideoSearch
 //
-//  Created by Mike Stuck on 10/18/16.
+//  Created by Mike Stuck on 10/20/16.
 //  Copyright © 2016 Mike Stuck. All rights reserved.
 //
 
-#ifndef Constants_h
-#define Constants_h
+#import <Foundation/Foundation.h>
 
-#define ARC4RANDOM_MAX 0x100000000
+@interface Constants : NSObject
 
-int TOTAL_NUMBER_OF_VIDEOS = 30;
+extern NSString *const MIXPANEL_API_KEY;
+extern NSString *const MIXPANEL_APP_OPEN;
+extern NSString *const MIXPANEL_APP_TERMINATED;
+extern NSString *const MIXPANEL_APP_BACKGROUND;
+extern NSString *const MIXPANEL_APP_FOREGROUND;
 
-#endif /* Constants_h */
+extern int TOTAL_NUMBER_OF_VIDEOS;
+
+@end
