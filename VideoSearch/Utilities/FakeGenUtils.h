@@ -11,6 +11,6 @@
 
 @interface FakeGenUtils : NSObject
 
-+ (NSMutableArray *)generateFakeVideoData;
++ (NSMutableArray *)generateMockVideoData;
 
 @end

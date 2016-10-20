@@ -16,6 +16,11 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    /*
+     Setup analytic tracking
+     */
+    
     [Mixpanel sharedInstanceWithToken:@"8ea1269ce03beba7fcb67683eb786375"];
     [Fabric with:@[[Crashlytics class]]];
     Mixpanel *mixpanel = [Mixpanel sharedInstance];

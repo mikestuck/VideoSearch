@@ -22,12 +22,20 @@
     [self setupSteppers];
 }
 
+/**
+    Load and sort mock video data
+ */
+
 - (void)loadAllVideosAndSort{
-    allVideos = [FakeGenUtils generateFakeVideoData];
+    allVideos = [FakeGenUtils generateMockVideoData];
     NSSortDescriptor *sortDescriptor = [[NSSortDescriptor alloc] initWithKey:@"startTime" ascending:YES];
     sortedVideos = [allVideos sortedArrayUsingDescriptors:@[sortDescriptor]];
     [_videoTableView reloadData];
 }
+
+/**
+    Do initial setup for stepper values and appearance
+ */
 
 - (void)setupSteppers{
     _startTimeStepper.tintColor = [ColorUtils startColor];
@@ -100,6 +108,12 @@
 
 #pragma mark - Search
 
+/**
+Handeler for calling and displaying SearchUtils results
+
+ @param swing Swing object with start and end time
+ */
+
 - (void)searchForVideos: (Swing *)swing{
     searchResultVideos = [SearchUtils searchVideosWithStartAndEnd:[NSNumber numberWithDouble:swing.startTime.doubleValue] endTime:[NSNumber numberWithDouble:swing.endTime.doubleValue] withObjects:sortedVideos];
     if(searchResultVideos.count == 0){
@@ -112,6 +126,12 @@
 }
 
 #pragma mark - Helpers
+
+/**
+Helper to create a Swing object with current start and end time
+
+ @return Swing object
+ */
 
 - (Swing *)createSwing{
     Swing *swing = [[Swing alloc] init];

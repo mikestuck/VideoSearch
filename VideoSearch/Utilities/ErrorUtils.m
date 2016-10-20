@@ -10,6 +10,14 @@
 
 @implementation ErrorUtils
 
+/**
+ Easy function to show alert controller with "Ok" action
+
+ @param title    Title of alert controller
+ @param subTitle Subtitle of alert controller
+ @param view     View that is to present the alert controller
+ */
+
 + (void)showAlert:(NSString *)title subTitle:(NSString *)subTitle inView:(UIViewController *)view{
     UIAlertController * alert=   [UIAlertController
                                   alertControllerWithTitle:title
